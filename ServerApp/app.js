@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+app.set('port', process.env.PORT);
+
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors');
@@ -35,5 +37,5 @@ mongoose.connect(
 });
 
 //Listener
-var port_number = server.listen(process.env.PORT || 3000);
-app.listen(port_number);
+
+app.listen(app.get('port'));

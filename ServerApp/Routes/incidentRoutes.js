@@ -29,6 +29,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     console.log(req.body);
+    console.log(req);
+
     const incidentRequest = new Incident({
         hostName: req.body.hostName,
         policyId: req.body.policyId
